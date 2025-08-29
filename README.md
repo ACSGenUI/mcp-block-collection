@@ -46,7 +46,7 @@ To use this server with an MCP client (like Claude Desktop or Cline), add this c
   "mcpServers": {
     "aem-block-collection": {
       "command": "node",
-      "args": ["/path/to/MCP-UI/aem-block-collection/index.js"],
+      "args": ["https://github.com/ACSUI-Gen-Playground/mcp-block-collection#main"],
       "env": {}
     }
   }
