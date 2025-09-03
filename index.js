@@ -109,6 +109,11 @@ const BLOCKS_METADATA = [
 const server = new McpServer({
   name: 'aem-block-collection',
   version: '1.0.0',
+},
+{
+  capabilities: {
+    tools: {},
+  },
 });
 
 // Register the blocks.json as a resource
