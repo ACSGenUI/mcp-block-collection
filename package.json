@@ -1,18 +1,12 @@
 {
-  "name": "aem-block-collection-mcp-server",
+  "name": "mcp-block-collection",
   "version": "1.0.0",
   "description": "Minimal MCP server for Adobe AEM Block Collection - provides list_blocks tool for reading block metadata",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "node --watch index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint index.js",
-    "build": "echo \"No build step required for Node.js\""
-  },
-  "bin": {
-    "aem-block-collection-mcp-server": "index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "mcp",
@@ -22,18 +16,13 @@
     "blocks",
     "metadata"
   ],
-  "author": "Adobe AI Team",
+  "author": "Adobe ACS GENUI",
   "license": "MIT",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.17.2",
-    "fs-extra": "^11.2.0",
-    "zod": "^3.22.4"
-  },
-  "devDependencies": {
-    "eslint": "^8.57.0"
+    "@modelcontextprotocol/sdk": "^1.17.2"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "repository": {
     "type": "git",
