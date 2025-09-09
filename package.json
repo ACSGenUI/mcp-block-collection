@@ -21,9 +21,6 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.2"
   },
-  "engines": {
-    "node": ">=20.0.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ACSGenUI/mcp-block-collection"
