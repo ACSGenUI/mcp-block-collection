@@ -2,6 +2,10 @@
 
 A minimal MCP (Model Context Protocol) server that provides access to AEM block metadata from `blocks.json`.
 
+<a href="https://glama.ai/mcp/servers/@ACSUI-Gen-Playground/mcp-block-collection">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@ACSUI-Gen-Playground/mcp-block-collection/badge" alt="AEM Block Collection Server MCP server" />
+</a>
+
 ## What it does
 
 This server exposes a single tool: `list_blocks` - which reads AEM block information from a `blocks.json` file and returns structured data about all available blocks.
