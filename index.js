@@ -2,105 +2,106 @@
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+const BC_DOMAIN = 'https://main--aem-block-collection--adobe.aem.live';
 
 // Embedded blocks metadata to avoid STDIO transport issues
 const BLOCKS_METADATA = [
   {
     "name": "Accordion",
     "description": "Implements an accordion UI pattern, allowing users to expand and collapse sections of content, styled with borders, padding, and transitions for visual feedback.",
-    "js_file": "blocks/accordion/accordion.js",
-    "css_file": "blocks/accordion/accordion.css"
+    "js_file": `${BC_DOMAIN}/blocks/accordion/accordion.js`,
+    "css_file": `${BC_DOMAIN}/blocks/accordion/accordion.css`
   },
   {
     "name": "Cards",
     "description": "Displays content in a card-like format with images and text, using a grid layout for responsiveness and basic styling for borders and spacing.",
-    "js_file": "blocks/cards/cards.js",
-    "css_file": "blocks/cards/cards.css"
+    "js_file": `${BC_DOMAIN}/blocks/cards/cards.js`,
+    "css_file": `${BC_DOMAIN}/blocks/cards/cards.css`
   },
   {
     "name": "Carousel",
     "description": "Creates a carousel or slider to showcase content, featuring navigation buttons, slide indicators, and CSS for basic layout and appearance.",
-    "js_file": "blocks/carousel/carousel.js",
-    "css_file": "blocks/carousel/carousel.css"
+    "js_file": `${BC_DOMAIN}/blocks/carousel/carousel.js`,
+    "css_file": `${BC_DOMAIN}/blocks/carousel/carousel.css`
   },
   {
     "name": "Columns",
     "description": "Arranges content into columns, adapting to different screen sizes with CSS flexbox for layout control.",
-    "js_file": "blocks/columns/columns.js",
-    "css_file": "blocks/columns/columns.css"
+    "js_file": `${BC_DOMAIN}/blocks/columns/columns.js`,
+    "css_file": `${BC_DOMAIN}/blocks/columns/columns.css`
   },
   {
     "name": "Embed",
     "description": "Embeds external content (videos, social posts) into a page, using placeholders and lazy loading for performance.",
-    "js_file": "blocks/embed/embed.js",
-    "css_file": "blocks/embed/embed.css"
+    "js_file": `${BC_DOMAIN}/blocks/embed/embed.js`,
+    "css_file": `${BC_DOMAIN}/blocks/embed/embed.css`
   },
   {
     "name": "Footer",
     "description": "Loads and displays footer content, fetching it as a fragment and applying basic styling for background color and font size.",
-    "js_file": "blocks/footer/footer.js",
-    "css_file": "blocks/footer/footer.css"
+    "js_file": `${BC_DOMAIN}/blocks/footer/footer.js`,
+    "css_file": `${BC_DOMAIN}/blocks/footer/footer.css`
   },
   {
     "name": "Form",
     "description": "Generates forms from JSON definitions, handling submissions and confirmations, with CSS for structuring fields and basic input styling.",
-    "js_file": "blocks/form/form.js",
-    "css_file": "blocks/form/form.css",
-    "helper_file": "blocks/form/form-fields.js"
+    "js_file": `${BC_DOMAIN}/blocks/form/form.js`,
+    "css_file": `${BC_DOMAIN}/blocks/form/form.css`,
+    "helper_file": `${BC_DOMAIN}/blocks/form/form-fields.js`
   },
   {
     "name": "Fragment",
     "description": "Includes content from another page fragment into the current page.",
-    "js_file": "blocks/fragment/fragment.js",
-    "css_file": "blocks/fragment/fragment.css"
+    "js_file": `${BC_DOMAIN}/blocks/fragment/fragment.js`,
+    "css_file": `${BC_DOMAIN}/blocks/fragment/fragment.css`
   },
   {
     "name": "Header",
     "description": "Loads and displays header content, fetching it as a fragment and applying CSS for layout and navigation.",
-    "js_file": "blocks/header/header.js",
-    "css_file": "blocks/header/header.css"
+    "js_file": `${BC_DOMAIN}/blocks/header/header.js`,
+    "css_file": `${BC_DOMAIN}/blocks/header/header.css`
   },
   {
     "name": "Hero",
     "description": "Presents a hero section with a large image and heading, using CSS for positioning and basic styling.",
-    "js_file": "blocks/hero/hero.js",
-    "css_file": "blocks/hero/hero.css"
+    "js_file": `${BC_DOMAIN}/blocks/hero/hero.js`,
+    "css_file": `${BC_DOMAIN}/blocks/hero/hero.css`
   },
   {
     "name": "Modal",
     "description": "Creates modal dialogs that can be opened via links, styled with CSS for appearance and positioning.",
-    "js_file": "blocks/modal/modal.js",
-    "css_file": "blocks/modal/modal.css"
+    "js_file": `${BC_DOMAIN}/blocks/modal/modal.js`,
+    "css_file": `${BC_DOMAIN}/blocks/modal/modal.css`
   },
   {
     "name": "Quote",
     "description": "Displays a quote with an optional attribution, styled with CSS for quotation marks and alignment.",
-    "js_file": "blocks/quote/quote.js",
-    "css_file": "blocks/quote/quote.css"
+    "js_file": `${BC_DOMAIN}/blocks/quote/quote.js`,
+    "css_file": `${BC_DOMAIN}/blocks/quote/quote.css`
   },
   {
     "name": "Search",
     "description": "Implements a search feature with a search box and results display, using CSS for layout and highlighting search terms.",
-    "js_file": "blocks/search/search.js",
-    "css_file": "blocks/search/search.css"
+    "js_file": `${BC_DOMAIN}/blocks/search/search.js`,
+    "css_file": `${BC_DOMAIN}/blocks/search/search.css`
   },
   {
     "name": "Table",
     "description": "Renders data in a tabular format, providing options for header display, striping, and borders via CSS classes.",
-    "js_file": "blocks/table/table.js",
-    "css_file": "blocks/table/table.css"
+    "js_file": `${BC_DOMAIN}/blocks/table/table.js`,
+    "css_file": `${BC_DOMAIN}/blocks/table/table.css`
   },
   {
     "name": "Tabs",
     "description": "Creates a tabbed interface for organizing content into panels, using CSS for layout and basic styling of tabs and panels.",
-    "js_file": "blocks/tabs/tabs.js",
-    "css_file": "blocks/tabs/tabs.css"
+    "js_file": `${BC_DOMAIN}/blocks/tabs/tabs.js`,
+    "css_file": `${BC_DOMAIN}/blocks/tabs/tabs.css`
   },
   {
     "name": "Video",
     "description": "Embeds videos from various sources (YouTube, Vimeo, local files), using placeholders and lazy loading for performance, with CSS for basic layout and styling.",
-    "js_file": "blocks/video/video.js",
-    "css_file": "blocks/video/video.css"
+    "js_file": `${BC_DOMAIN}/blocks/video/video.js`,
+    "css_file": `${BC_DOMAIN}/blocks/video/video.css`
   }
 ];
 
